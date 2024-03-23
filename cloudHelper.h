@@ -10,7 +10,7 @@ void cloudBegin()
 
   while (!ArduinoCloud.connected())
   {
-    ArduinoCloud.update();
     delay(CLOUD_DELAY);
+    ArduinoCloud.update();
   }
 }
