@@ -1,7 +1,7 @@
 #ifndef __STATES_STATE_H
 #define __STATES_STATE_H
 
-#include "../matrix.h"
+#include "matrix.h"
 
 enum STATE {
   SETUP,

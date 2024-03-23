@@ -2,7 +2,7 @@
 #define __STATES_SETUP_H
 
 #include "state.h"
-#include "../matrix.h"
+#include "matrix.h"
 
 class SetupState : public State {
 public:

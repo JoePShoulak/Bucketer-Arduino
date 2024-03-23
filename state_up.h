@@ -2,7 +2,7 @@
 #define __STATES_UP_H
 
 #include "state.h"
-#include "../bucket.h"
+#include "bucket.h"
 
 class UpState : public State {
 public:
