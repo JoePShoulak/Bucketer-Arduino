@@ -3,7 +3,15 @@
 
 #define WHITE 0xffffffff
 
-void matrixPrint(ArduinoLEDMatrix &matrix, String text)
+ArduinoLEDMatrix matrix;
+
+void matrixBegin()
+{
+  matrix.begin();
+  matrix.textFont(Font_5x7);
+}
+
+void matrixPrint(String text)
 {
   matrix.beginDraw();
   matrix.beginText(1, 1, WHITE);
