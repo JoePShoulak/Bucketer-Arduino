@@ -17,6 +17,8 @@ bool UpState::begin()
 {
   log("UP", "UP");
   Bucket::setTarget(DESTINATION);
+  bucketInMotion = true;
+  bucketLowered = false;
 
   return true; // no errors
 }
@@ -34,6 +36,7 @@ bool UpState::isDone()
 
 STATE UpState::nextState()
 {
+  bucketRaised = true;
   return STATE::STOP;
 }
 

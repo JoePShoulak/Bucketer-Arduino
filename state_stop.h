@@ -2,6 +2,7 @@
 #define __STATES_STOP_H
 
 #include "state.h"
+#include "thingProperties.h"
 
 class StopState : public State
 {
@@ -30,6 +31,7 @@ bool StopState::isDone()
 
 STATE StopState::nextState()
 {
+  bucketInMotion = false;
   return STATE::READY;
 }
 

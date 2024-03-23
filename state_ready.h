@@ -14,7 +14,7 @@ public:
 
 bool ReadyState::begin()
 {
-  log("READY", "RE");
+  log("READY", "RD");
   return true; // no errors
 }
 

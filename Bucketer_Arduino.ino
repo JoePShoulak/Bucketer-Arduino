@@ -19,13 +19,13 @@ void loop()
 
 void onLowerBucketChange()
 {
-  if (lowerBucket)
+  if (lowerBucket && !bucketLowered)
     state_machine->changeState(STATE::DOWN);
 }
 
 void onRaiseBucketChange()
 {
-  if (raiseBucket)
+  if (raiseBucket && !bucketRaised)
     state_machine->changeState(STATE::UP);
 }
 

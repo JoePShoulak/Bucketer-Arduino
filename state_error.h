@@ -2,6 +2,7 @@
 #define __STATES_ERROR_H
 
 #include "state.h"
+#include "thingProperties.h"
 
 class ErrorState : public State
 {
@@ -15,6 +16,7 @@ public:
 bool ErrorState::begin()
 {
   log("ERROR", "ER");
+  error = true;
   return true; // no errors
 }
 

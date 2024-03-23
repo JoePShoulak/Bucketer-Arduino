@@ -2,6 +2,7 @@
 #define __STATES_STATE_H
 
 #include "matrix.h"
+#include "thingProperties.h"
 
 enum STATE
 {
@@ -29,8 +30,8 @@ public:
 
 void State::log(const String &a, const String &b)
 {
-  // message = a;
-  // Serial.print(a);
+  message = a;
+  Serial.print(a);
   Matrix::print(b);
 }
 

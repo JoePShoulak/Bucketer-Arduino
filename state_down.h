@@ -3,6 +3,7 @@
 
 #include "state.h"
 #include "bucket.h"
+#include "thingProperties.h"
 
 class DownState : public State
 {
@@ -17,6 +18,8 @@ bool DownState::begin()
 {
   log("DOWN", "DN");
   Bucket::setTarget(-DESTINATION);
+  bucketInMotion = true;
+  bucketRaised = false;
 
   return true; // no errors
 }
@@ -34,6 +37,7 @@ bool DownState::isDone()
 
 STATE DownState::nextState()
 {
+  bucketLowered = true;
   return STATE::STOP;
 }
 
