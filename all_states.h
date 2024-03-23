@@ -1,6 +1,6 @@
 #include "state_down.h"
 #include "state_up.h"
 #include "state_stop.h"
-#include "state_setup.h"
+#include "state_boot.h"
 #include "state_ready.h"
-#include "error.h"
+#include "state_error.h"

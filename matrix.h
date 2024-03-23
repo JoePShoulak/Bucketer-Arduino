@@ -6,15 +6,18 @@
 
 #define WHITE 0xffffffff
 
-struct Matrix {
+struct Matrix
+{
 	static ArduinoLEDMatrix matrix;
 
-	static void begin() {
+	static void begin()
+	{
 		matrix.begin();
 		matrix.textFont(Font_5x7);
 	}
 
-	static void print(const String& text) {
+	static void print(const String &text)
+	{
 		matrix.beginDraw();
 		matrix.beginText(1, 1, WHITE);
 		matrix.println(text);
@@ -22,5 +25,7 @@ struct Matrix {
 		matrix.endDraw();
 	}
 };
+
+ArduinoLEDMatrix Matrix::matrix;
 
 #endif

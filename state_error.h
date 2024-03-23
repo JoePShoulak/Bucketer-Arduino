@@ -3,7 +3,8 @@
 
 #include "state.h"
 
-class ErrorState : public State {
+class ErrorState : public State
+{
 public:
   bool begin() override;
   bool run() override;
@@ -11,21 +12,25 @@ public:
   STATE nextState() override;
 };
 
-bool ErrorState::begin() {
+bool ErrorState::begin()
+{
   log("ERROR", "ER");
-  return true; //no errors
+  return true; // no errors
 }
 
-bool ErrorState::run() {
-  return true; //no errors
+bool ErrorState::run()
+{
+  return true; // no errors
 }
 
-bool ErrorState::isDone() {
-	return true;
+bool ErrorState::isDone()
+{
+  return true;
 }
 
-STATE ErrorState::nextState() {
-  return STATE::READY;
+STATE ErrorState::nextState()
+{
+  return STATE::ERROR;
 }
 
 #endif

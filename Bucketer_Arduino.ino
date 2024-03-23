@@ -1,15 +1,10 @@
-//#include "thingProperties.h"
+#include "thingProperties.h"
 #include "cloudHelper.h"
 #include "stateMachine.h"
 
-#define BAUDRATE 9600
-
-bool upRequested;
-bool downRequested;
-bool stopRequested;
 String errorMsg;
 
-StateMachine* state_machine;
+StateMachine *state_machine;
 
 void setup()
 {
@@ -20,12 +15,6 @@ void loop()
 {
   ArduinoCloud.update();
   state_machine->run();
-}
-
-void request(bool &ref)
-{
-  clearRequests();
-  ref = true;
 }
 
 void onLowerBucketChange()

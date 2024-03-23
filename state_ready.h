@@ -3,7 +3,8 @@
 
 #include "state.h"
 
-class ReadyState : public State {
+class ReadyState : public State
+{
 public:
   bool begin() override;
   bool run() override;
@@ -11,20 +12,24 @@ public:
   STATE nextState() override;
 };
 
-bool ReadyState::begin() {
+bool ReadyState::begin()
+{
   log("READY", "RE");
-  return true; //no errors
+  return true; // no errors
 }
 
-bool ReadyState::run() {
-  return true; //no errors
+bool ReadyState::run()
+{
+  return true; // no errors
 }
 
-bool ReadyState::isDone() {
-	return true;
+bool ReadyState::isDone()
+{
+  return true;
 }
 
-STATE ReadyState::nextState() {
+STATE ReadyState::nextState()
+{
   return STATE::READY;
 }
 

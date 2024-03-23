@@ -3,7 +3,8 @@
 
 #include "state.h"
 
-class StopState : public State {
+class StopState : public State
+{
 public:
   bool begin() override;
   bool run() override;
@@ -11,20 +12,24 @@ public:
   STATE nextState() override;
 };
 
-bool StopState::begin() {
+bool StopState::begin()
+{
   log("STOP", "ST");
-  return true; //no errors
+  return true; // no errors
 }
 
-bool StopState::run() {
-  return true; //no errors
+bool StopState::run()
+{
+  return true; // no errors
 }
 
-bool StopState::isDone() {
-	return true;
+bool StopState::isDone()
+{
+  return true;
 }
 
-STATE StopState::nextState() {
+STATE StopState::nextState()
+{
   return STATE::READY;
 }
 

@@ -4,7 +4,8 @@
 #include "state.h"
 #include "bucket.h"
 
-class DownState : public State {
+class DownState : public State
+{
 public:
   bool begin() override;
   bool run() override;
@@ -12,23 +13,27 @@ public:
   STATE nextState() override;
 };
 
-bool DownState::begin() {
+bool DownState::begin()
+{
   log("DOWN", "DN");
   Bucket::setTarget(-DESTINATION);
 
-  return true; //no errors
+  return true; // no errors
 }
 
-bool DownState::run() {
+bool DownState::run()
+{
   Bucket::run();
-  return true; //no errors
+  return true; // no errors
 }
 
-bool DownState::isDone() {
+bool DownState::isDone()
+{
   return Bucket::targetReached();
 }
 
-STATE DownState::nextState() {
+STATE DownState::nextState()
+{
   return STATE::STOP;
 }
 

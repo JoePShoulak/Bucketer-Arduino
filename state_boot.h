@@ -4,7 +4,10 @@
 #include "state.h"
 #include "matrix.h"
 
-class SetupState : public State {
+#define BAUDRATE 9600
+
+class BootState : public State
+{
 public:
   bool begin() override;
   bool run() override;
@@ -12,28 +15,30 @@ public:
   STATE nextState() override;
 };
 
-bool SetupState::begin() {
-  log("SETUP", "SU");
-
+bool BootState::begin()
+{
   Matrix::begin();
   Matrix::print("BT");
 
-  //Serial.begin(BAUDRATE);
-  //cloudBegin();
+  Serial.begin(BAUDRATE);
+  cloudBegin();
   Bucket::begin();
 
-  return true; //no errors
+  return true; // no errors
 }
 
-bool SetupState::run() {
-  return true; //no errors
+bool BootState::run()
+{
+  return true; // no errors
 }
 
-bool SetupState::isDone() {
-	return true;
+bool BootState::isDone()
+{
+  return true;
 }
 
-STATE SetupState::nextState() {
+STATE BootState::nextState()
+{
   return STATE::READY;
 }
 

@@ -3,8 +3,9 @@
 
 #include "matrix.h"
 
-enum STATE {
-  SETUP,
+enum STATE
+{
+  BOOT,
   READY,
   UP,
   DOWN,
@@ -14,9 +15,10 @@ enum STATE {
   _TOTAL,
 };
 
-class State {
+class State
+{
 protected:
-  virtual void log(const String& a, const String& b) final;
+  virtual void log(const String &a, const String &b) final;
 
 public:
   virtual bool begin() = 0;
@@ -25,8 +27,11 @@ public:
   virtual STATE nextState() = 0;
 };
 
-void State::log(const  String&a, const String& b) {
-  Matrix::print(a + ': ' + b);
+void State::log(const String &a, const String &b)
+{
+  // message = a;
+  // Serial.print(a);
+  Matrix::print(b);
 }
 
 #endif
