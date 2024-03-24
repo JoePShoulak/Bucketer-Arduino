@@ -1,40 +1,38 @@
 #include "thingProperties.h"
-#include "cloudHelper.h"
 #include "stateMachine.h"
 
-String errorMsg;
-
-StateMachine *state_machine;
+StateMachine *stateMachine;
 
 void setup()
 {
-  state_machine = new StateMachine;
+  stateMachine = new StateMachine;
 }
 
 void loop()
 {
   ArduinoCloud.update();
-  state_machine->run();
+  stateMachine->run();
 }
 
 void onLowerBucketChange()
 {
   if (lowerBucket && !bucketLowered)
-    state_machine->changeState(STATE::DOWN);
+    stateMachine->changeState(STATE::DOWN);
 }
 
 void onRaiseBucketChange()
 {
   if (raiseBucket && !bucketRaised)
-    state_machine->changeState(STATE::UP);
+    stateMachine->changeState(STATE::UP);
 }
 
 void onStopBucketChange()
 {
-  if (stopBucket)
-    state_machine->changeState(STATE::STOP);
+  if (stopBucket && bucketInMotion)
+    stateMachine->changeState(STATE::STOP);
 }
 
 void onMessageChange()
-{ // We don't care about messages sent to us
+{
+  // We don't care about messages sent to us
 }

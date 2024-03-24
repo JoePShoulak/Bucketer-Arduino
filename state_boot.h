@@ -3,6 +3,7 @@
 
 #include "state.h"
 #include "matrix.h"
+#include "cloudHelper.h"
 
 #define BAUDRATE 9600
 
